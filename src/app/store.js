@@ -6,6 +6,7 @@ export const store = configureStore({
     reducer:{
         // resolve reducer dynamically
         [apiSlice.reducerPath]: apiSlice.reducerPath,
+        auth: authReducer
     },
     middleware: getDefaultMiddleware => 
     //required to enable caching

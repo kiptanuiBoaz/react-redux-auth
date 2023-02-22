@@ -13,7 +13,7 @@ const Login = () => {
     const [errMsg, setErrMsg] = useState('')
     const navigate = useNavigate()
 
-    const [login, { isLoading }] = useLoginMutation()
+    const [login, { isLoading }] =  useLoginMutation();
     const dispatch = useDispatch();
 
     useEffect(() => {
