@@ -30,13 +30,14 @@ const Login = () => {
 
         try {
             //call the login fn from loginMutation
-            const userData = await login({ user, pwd }).unWrapped();
+            const userData = await login({ user, pwd }).unwrap();
             //dispatch reducer fn and pass token from api and username from state
             dispatch(setCredentials({ ...userData, user }));
             setUser("");
             setPwd("");
             navigate("/welcome")
         } catch (err) {
+            console.log(err);
             if (!err?.originalStatus) {
                 // isLoading: true until timeout occurs
                 setErrMsg('No Server Response');
