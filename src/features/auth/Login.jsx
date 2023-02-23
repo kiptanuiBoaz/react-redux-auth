@@ -25,7 +25,7 @@ const Login = () => {
         setErrMsg("");
     }, [user, pwd])
 
-    const hadleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {

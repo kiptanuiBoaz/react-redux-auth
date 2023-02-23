@@ -17,6 +17,7 @@ const baseQuery = fetchBaseQuery({
 //custom query function for retrying auth
 const baseQueryWithReAuth = async (args, api, extraOptions) => {
     let result = await baseQuery(args, api, extraOptions);
+    console.log(result);
     //look out for status codes
     if (result?.error?.originalStatus === 403) {
         console.log("Sending refresh token");
@@ -37,7 +38,6 @@ const baseQueryWithReAuth = async (args, api, extraOptions) => {
     }
     return result;
 }
-
 
 export const apiSlice = createApi({
     baseQuery: baseQueryWithReAuth,
